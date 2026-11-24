@@ -1,0 +1,172 @@
+:root {
+  --primary: #087c83;
+  --primary-dark: #065c62;
+  --background: #f4f8fa;
+  --text: #183343;
+  --muted: #64748b;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 7%;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.brand {
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.brand span {
+  color: var(--primary);
+}
+
+.secure {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.hero {
+  text-align: center;
+  padding: 85px 24px;
+  background: linear-gradient(
+    135deg,
+    #065c62,
+    #087c83
+  );
+  color: white;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 7vw, 68px);
+  margin: 24px 0 12px;
+}
+
+.hero h2 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 24px auto;
+  line-height: 1.8;
+}
+
+.primary {
+  background: white;
+  color: var(--primary-dark);
+  border: none;
+  border-radius: 8px;
+  padding: 17px 25px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.primary:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.hero .notice {
+  font-size: 12px;
+  margin: 15px auto 0;
+}
+
+.features {
+  max-width: 1200px;
+  padding: 45px 24px 65px;
+  margin: auto;
+}
+
+.features > h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 12px;
+  padding: 26px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px #00000005;
+}
+
+.feature-icon {
+  font-size: 32px;
+}
+
+.feature-card h3 {
+  color: var(--primary-dark);
+}
+
+.feature-card p {
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 14px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+@media (max-width: 800px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    padding: 18px;
+  }
+
+  .brand {
+    font-size: 21px;
+  }
+
+  .secure {
+    font-size: 10px;
+  }
+
+  .hero {
+    padding: 55px 20px;
+  }
+}
