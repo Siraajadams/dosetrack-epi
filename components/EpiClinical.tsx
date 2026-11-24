@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "../lib/supabase";
 
 type Mode = "register" | "search" | "administer" | "appointments";
 type Site = { id: string; site_name: string };
