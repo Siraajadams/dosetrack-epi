@@ -1,10 +1,12 @@
+import Link from "next/link";
+
 export default function Home() {
   const features = [
     {
       icon: "👶",
       title: "Patient Registration",
       description:
-        "Register children and manage patient and caregiver information.",
+        "Register patients and manage caregiver information.",
     },
     {
       icon: "💉",
@@ -22,13 +24,19 @@ export default function Home() {
       icon: "🧪",
       title: "Multi-dose Vials",
       description:
-        "Track opened vials, available doses and wastage.",
+        "Manage opened vials, available doses and wastage.",
     },
     {
       icon: "📅",
       title: "Appointments",
       description:
-        "Manage immunisation follow-up appointments.",
+        "Manage patient immunisation follow-up appointments.",
+    },
+    {
+      icon: "🌡️",
+      title: "Cold Chain Management",
+      description:
+        "Planned monitoring of vaccine storage and temperature records.",
     },
     {
       icon: "📊",
@@ -36,18 +44,33 @@ export default function Home() {
       description:
         "Monitor immunisation activity and vaccine utilisation.",
     },
+    {
+      icon: "🏥",
+      title: "Clinic Management",
+      description:
+        "Manage immunisation services across participating clinics.",
+    },
+    {
+      icon: "🔄",
+      title: "Stock Reconciliation",
+      description:
+        "Monitor stock received, administered and wasted.",
+    },
   ];
 
   return (
     <main>
       <header className="header">
-        <div className="brand">
+        <Link href="/" className="brand">
           DoseTrack <span>EPI</span>
-        </div>
+        </Link>
 
-        <div className="secure">
-          Secure Clinical Access
-        </div>
+        <Link
+          href="/login"
+          className="nav-login"
+        >
+          Login
+        </Link>
       </header>
 
       <section className="hero">
@@ -57,25 +80,32 @@ export default function Home() {
 
         <h1>DoseTrack EPI</h1>
 
-        <h2>Expanded Programme on Immunisation</h2>
+        <h2>
+          Expanded Programme on Immunisation
+        </h2>
 
         <p>
-          An integrated platform for healthcare
-          workers to manage immunisation services,
-          vaccine inventory and patient follow-ups.
+          An integrated digital platform for
+          healthcare workers to manage
+          immunisation services, vaccine
+          inventory and patient follow-ups.
         </p>
 
-        <button className="primary" disabled>
-          Healthcare Worker Login — Coming Soon
-        </button>
+        <Link
+          href="/login"
+          className="primary"
+        >
+          Healthcare Worker Login →
+        </Link>
 
         <p className="notice">
-          Authorised healthcare personnel only.
+          Secure clinical access for authorised
+          healthcare personnel.
         </p>
       </section>
 
       <section className="features">
-        <h2>Platform capabilities</h2>
+        <h2>Platform Capabilities</h2>
 
         <div className="feature-grid">
           {features.map((feature) => (
@@ -96,7 +126,9 @@ export default function Home() {
       </section>
 
       <footer>
-        DoseTrack EPI | Immunisation Management
+        DoseTrack EPI
+        <br />
+        Immunisation Management Platform
         <br />
         © {new Date().getFullYear()} DoseTrack
       </footer>
